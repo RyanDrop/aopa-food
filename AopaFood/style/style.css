@@ -76,3 +76,10 @@ header.scroll-color > .cart {
 header.scroll-color > .cart:hover {
   border-color: var(--white);
 }
+/* Main */
+main {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  background-color: rgb(243, 243, 243);
+}

@@ -450,3 +450,14 @@ button.buy:hover {
   color: var(--white);
   border-color: rgb(41, 180, 6);
 }
+/* footer */
+footer {
+  width: 100vw;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  font-weight: bold;
+  font-size: 2.5vh;
+}

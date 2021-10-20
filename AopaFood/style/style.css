@@ -461,3 +461,88 @@ footer {
   font-weight: bold;
   font-size: 2.5vh;
 }
+
+/* Responsive */
+@media (min-width: 600px) {
+  header {
+    padding: 10px 60px;
+  }
+  .logo-content {
+    font-size: 30px;
+  }
+  .cart {
+    font-size: 25px;
+    border: 5px solid var(--white);
+  }
+  header.scroll-color > .cart {
+    border: 5px solid var(--black);
+  }
+
+  /* Slideshow */
+  .slideshows-container {
+    padding: 0px 100px;
+  }
+
+  /* Shop */
+  Section.shop {
+    padding: 0px 100px;
+    width: 100vw;
+  }
+  .title {
+    border: 5px solid var(--white);
+    border-radius: 18px;
+    padding: 10px 40px;
+    max-width: 500px;
+    font-size: 30px;
+  }
+  .card {
+    padding: 20px;
+    background-color: var(--white);
+    height: 240px;
+    width: 260px;
+  }
+  .card h1 {
+    width: 230px;
+    font-size: 30px;
+  }
+
+  .card img {
+    width: 120px;
+  }
+  .card p {
+    font-size: 30px;
+  }
+  .card button {
+    height: 50px;
+    width: 220px;
+    font-size: 25px;
+  }
+  /* Modal */
+  .cart-content {
+    width: min(80%, 850px);
+    height: min(90%, 800px);
+    border-radius: 14px;
+  }
+  .cart-title {
+    height: 50px;
+    font-size: 30px;
+  }
+  button.close-cart {
+    height: 40px;
+    border: none;
+    font-size: 35px;
+  }
+  .cart-card {
+    margin: 10px;
+  }
+
+  .cart-functions p {
+    font-size: 30px;
+  }
+
+  button.buy {
+    width: 400px;
+    height: 48px;
+    font-size: 25px;
+  }
+}

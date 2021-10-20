@@ -151,3 +151,23 @@ function modelHTML(object) {
   return html;
 }
 
+for (i = 0; i < mainDishes.length; i++) {
+  const cardInnerHtml = modelHTML(mainDishes[i]);
+  const $card = createCardElement();
+  $card.innerHTML = cardInnerHtml;
+  $mainCourse.appendChild($card);
+}
+
+for (i = 0; i < desserts.length; i++) {
+  const cardInnerHtml = modelHTML(desserts[i]);
+  const $card = createCardElement();
+  $card.innerHTML = cardInnerHtml;
+  $dessert.appendChild($card);
+}
+
+for (i = 0; i < drinks.length; i++) {
+  const cardInnerHtml = modelHTML(drinks[i]);
+  const $card = createCardElement();
+  $card.innerHTML = cardInnerHtml;
+  $drink.appendChild($card);
+}

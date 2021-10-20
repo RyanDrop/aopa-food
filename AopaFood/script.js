@@ -6,6 +6,11 @@ const $next = document.querySelector(".next");
 const $mainCourse = document.querySelector(".main-dishes");
 const $dessert = document.querySelector(".desserts");
 const $drink = document.querySelector(".drinks");
+const $cartItens = document.querySelector(".cart-itens");
+const formatDollObj = { style: "currency", currency: "USD" };
+const $modal = document.querySelector(".modal");
+const $cart = document.querySelector(".cart");
+const $buttonClose = document.querySelector(".close-cart");
 
 const mainDishes = [
   {
@@ -72,9 +77,14 @@ $dots[0].addEventListener("click", () => currentSlide(0));
 $dots[1].addEventListener("click", () => currentSlide(1));
 $next.addEventListener("click", nextSlide);
 $prev.addEventListener("click", previousSlide);
+$cart.addEventListener("click", activeModal);
+$buttonClose.addEventListener("click", activeModal);
+
+function activeModal() {
+  $modal.classList.toggle("active");
+}
 
 let currentSlideIndex = 0;
-
 showSlides(currentSlideIndex);
 
 function nextSlide() {

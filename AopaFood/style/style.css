@@ -24,3 +24,55 @@ body {
   background-color: var(--base);
   border-radius: 3px;
 }
+/* Header */
+header {
+  width: 100vw;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--base);
+  font-weight: 700;
+  box-shadow: 0 0 6px var(--black);
+  position: fixed;
+  z-index: 2;
+  color: var(--white);
+  transition: background-color 0.5s, color 0.2s, border 0.5s;
+}
+
+header i {
+  margin-left: 5px;
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  border: 3px solid var(--white);
+  border-radius: 14px;
+  padding: 5px 2px;
+  user-select: none;
+  cursor: pointer;
+  transition: border-color 0.4s;
+}
+
+.cart:hover {
+  border-color: var(--base);
+}
+
+header.scroll-color {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+header.scroll-color > .cart {
+  border: 3px solid var(--black);
+}
+
+header.scroll-color > .cart:hover {
+  border-color: var(--white);
+}

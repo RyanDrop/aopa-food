@@ -1,8 +1,12 @@
+const $header = document.querySelector("header");
 const $slides = document.querySelectorAll(".slide");
 const $dots = document.querySelectorAll(".dot");
 const $prev = document.querySelector(".prev");
 const $next = document.querySelector(".next");
 
+window.addEventListener("scroll", () => {
+  $header.classList.toggle("scroll-color", window.scrollY);
+});
 $dots[0].addEventListener("click", () => currentSlide(0));
 $dots[1].addEventListener("click", () => currentSlide(1));
 $next.addEventListener("click", nextSlide);

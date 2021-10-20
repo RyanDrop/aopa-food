@@ -128,3 +128,26 @@ function hideSlides() {
   }
 }
 setInterval(nextSlide, 4000);
+
+function createElementWithClass(selector, className) {
+  const $element = document.createElement(selector);
+  $element.classList.add(className);
+  return $element;
+}
+
+function createCardElement() {
+  const $card = createElementWithClass("div", "card");
+  $card.innerHTML = modelHTML;
+  return $card;
+}
+
+function modelHTML(object) {
+  const html = `
+  <h1>${object.description}</h1>
+  <img src='${object.img}' alt='food'>
+  <p>${object.value.toLocaleString("en-US", formatDollObj)}</p>
+  <button class='add-cart' key="${object.id}">Add</button>
+  `;
+  return html;
+}
+

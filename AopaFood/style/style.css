@@ -161,3 +161,110 @@ main {
 .dot:hover {
   background-color: var(--white);
 }
+/* Section shop */
+Section.shop {
+  padding: 0px 20px;
+  width: 100vw;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  user-select: none;
+}
+
+/* Main-dishes */
+.main-course {
+  width: 100vw;
+  margin-bottom: 40px;
+}
+.main-dishes {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.title {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--white);
+  border-radius: 14px;
+  font-weight: bold;
+  background-color: var(--yellow);
+  padding: 10px 20px;
+  max-width: 350px;
+}
+
+.title i {
+  margin-left: 5px;
+}
+
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--white);
+  height: 160px;
+  width: 160px;
+  border-radius: 14px;
+  font-weight: 400;
+  margin: 20px 10px 0px 10px;
+}
+
+.card h1 {
+  width: 140px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.card img {
+  width: 80px;
+}
+
+.card p {
+  font-size: 22px;
+}
+
+.card button {
+  height: 40px;
+  width: 140px;
+  background-color: var(--base);
+  border: var(--white);
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+.card button:hover {
+  color: var(--white);
+}
+
+/* dessert */
+.dessert {
+  width: 100vw;
+  margin-bottom: 40px;
+}
+
+.desserts {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+/* drink */
+.drink {
+  width: 100vw;
+  margin-bottom: 40px;
+}
+
+.drinks {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}

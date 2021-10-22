@@ -327,7 +327,7 @@ button.close-cart {
   cursor: pointer;
 }
 
-.cart-itens {
+.cart-items {
   height: 80%;
   width: 100%;
   display: flex;
@@ -365,7 +365,7 @@ button.close-cart {
   font-size: 22px;
   font-weight: 500;
 }
-.data-itens {
+.data-items {
   display: flex;
   width: 115px;
   flex-direction: column;
@@ -397,18 +397,21 @@ button.close-cart {
   margin-right: 5px;
 }
 
-.cart-itens input[type="number"]::-webkit-inner-spin-button,
+.cart-items input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.cart-itens input {
+.cart-items input {
   max-width: 50px;
   height: 28px;
   margin: 0 2px 0 2px;
   background-color: var(--white);
   font-weight: 400;
+  text-align: center;
+  font-family: "Poppins";
+  border-radius: 5px;
 }
 
 .cart-functions {

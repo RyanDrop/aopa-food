@@ -1,5 +1,5 @@
-import {MAIN_DISHES, DESSERTS, DRINKS} from "./modules/shop-items.js"
 import { currentSlideIndex, nextSlide, showSlides } from "./modules/slideshow.js";
+import { MAIN_DISHES, DESSERTS, DRINKS } from "./modules/shop-items.js";
 
 const $header = document.querySelector("header");
 const $mainCourse = document.querySelector(".main-dishes");
@@ -11,6 +11,9 @@ const $modal = document.querySelector(".modal");
 const $cart = document.querySelector(".cart");
 const $buttonClose = document.querySelector(".close-cart");
 
+showSlides(currentSlideIndex);
+setInterval(nextSlide, 4000);
+
 window.addEventListener("scroll", () => {
   $header.classList.toggle("scroll-color", window.scrollY);
 });
@@ -21,8 +24,19 @@ function activeModal() {
   $modal.classList.toggle("active");
 }
 
-showSlides(currentSlideIndex);
-setInterval(nextSlide, 4000);
+const shopItems = [
+  ...MAIN_DISHES.map((item) => ({ ...item, $container: $mainCourse })),
+  ...DESSERTS.map((item) => ({ ...item, $container: $dessert })),
+  ...DRINKS.map((item) => ({ ...item, $container: $drink })),
+];
+
+shopItems.forEach((item) => {
+  const $container = item.$container;
+  const cardInnerHTML = modelHTML(item);
+  const $card = createCardElement();
+  $card.innerHTML = cardInnerHTML;
+  $container.appendChild($card);
+});
 
 function createElementWithClass(selector, className) {
   const $element = document.createElement(selector);
@@ -46,23 +60,3 @@ function modelHTML(object) {
   return html;
 }
 
-for (let i = 0; i < MAIN_DISHES.length; i++) {
-  const cardInnerHtml = modelHTML(MAIN_DISHES[i]);
-  const $card = createCardElement();
-  $card.innerHTML = cardInnerHtml;
-  $mainCourse.appendChild($card);
-}
-
-for (let i = 0; i < DESSERTS.length; i++) {
-  const cardInnerHtml = modelHTML(DESSERTS[i]);
-  const $card = createCardElement();
-  $card.innerHTML = cardInnerHtml;
-  $dessert.appendChild($card);
-}
-
-for (let i = 0; i < DRINKS.length; i++) {
-  const cardInnerHtml = modelHTML(DRINKS[i]);
-  const $card = createCardElement();
-  $card.innerHTML = cardInnerHtml;
-  $drink.appendChild($card);
-}

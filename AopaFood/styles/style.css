@@ -57,7 +57,7 @@ header i {
   padding: 5px 4px;
   user-select: none;
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
   transition: border-color 0.4s;
 }
 
@@ -215,10 +215,10 @@ Section.shop {
   border-radius: 14px;
   font-weight: 400;
   margin: 20px 10px 0px 10px;
-  transition: transform .1s;
+  transition: transform 0.1s;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.02);
 }
 .card h1 {
@@ -330,10 +330,10 @@ button.close-cart {
   margin-right: 4px;
   text-align: right;
   cursor: pointer;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
-button.close-cart:hover{
+button.close-cart:hover {
   color: red;
 }
 .cart-items {
@@ -354,7 +354,7 @@ button.close-cart:hover{
   background-color: rgb(240, 240, 240);
   border-radius: 10px;
   margin: 4px;
-  transition: box-shadow 0.3s, transform .1s;
+  transition: box-shadow 0.3s, transform 0.1s;
 }
 
 .cart-card:hover {
@@ -464,13 +464,38 @@ button.buy:hover {
   border-color: rgb(41, 180, 6);
 }
 
-div.checked img{
+div.checked img {
   position: absolute;
   background-color: var(--white);
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   height: 100%;
+}
+
+div.unchecked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  padding: 20px 20px;
+}
+
+div.unchecked p {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+div.unchecked img {
+  width: 60%;
 }
 /* footer */
 footer {
@@ -568,21 +593,21 @@ footer {
     height: 48px;
     font-size: 25px;
   }
-  div.checked{
+  div.checked {
     position: absolute;
     background-color: rgb(246, 246, 246);
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 100vw;
     height: 100vh;
   }
-  div.checked img{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 600px;
-  height: auto;
-}
+  div.checked img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: auto;
+  }
 }

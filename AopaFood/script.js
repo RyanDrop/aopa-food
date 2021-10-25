@@ -13,7 +13,7 @@ const $cart = document.querySelector(".cart");
 const $buttonClose = document.querySelector(".close-cart");
 const $cartItems = document.querySelector(".cart-items");
 const $buttonBuy = document.querySelector(".buy");
-const $cartContent = document.querySelector(".cart-content")
+const $cartContent = document.querySelector(".cart-content");
 
 showSlides(currentSlideIndex);
 setInterval(nextSlide, 4000);
@@ -78,7 +78,7 @@ function updateModalList(productID) {
             </div>
           </div>
         </div>
-        `
+        `;
     total += object.value * object.quantity;
     $cartItems.innerHTML += modalCardInnerHTML;
   });
@@ -109,12 +109,24 @@ function modelHTML(object) {
   return html;
 }
 
-function approvedPurchase(){
+function approvedPurchase() {
   const $checked = createElementWithClass("div", "checked");
   $checked.innerHTML = `<img src="./assets/gif/check.gif" alt="buy-checked">`;
-  $cartContent.appendChild($checked)
+  $cartContent.appendChild($checked);
   setTimeout(() => {
     $checked.remove();
-    activeModal()
-  },2440);
+    activeModal();
+  }, 2440);
+}
+
+function purchaseDenied() {
+  const $unchecked = createElementWithClass("div", "unchecked");
+  $unchecked.innerHTML = `
+  <p>Add items to proceed</p>
+  <img src="./assets/gif/unchecked.gif" alt="buy-checked">
+  `;
+  $cartContent.appendChild($unchecked);
+  setTimeout(() => {
+    $unchecked.remove();
+  }, 3000);
 }

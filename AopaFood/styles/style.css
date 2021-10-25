@@ -463,6 +463,15 @@ button.buy:hover {
   color: var(--white);
   border-color: rgb(41, 180, 6);
 }
+
+div.checked img{
+  position: absolute;
+  background-color: var(--white);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 100%;
+}
 /* footer */
 footer {
   width: 100vw;
@@ -559,4 +568,21 @@ footer {
     height: 48px;
     font-size: 25px;
   }
+  div.checked{
+    position: absolute;
+    background-color: rgb(246, 246, 246);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 100vh;
+  }
+  div.checked img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  height: auto;
+}
 }

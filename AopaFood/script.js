@@ -12,6 +12,8 @@ const formatDollObj = { style: "currency", currency: "USD" };
 const $cart = document.querySelector(".cart");
 const $buttonClose = document.querySelector(".close-cart");
 const $cartItems = document.querySelector(".cart-items");
+const $buttonBuy = document.querySelector(".buy");
+const $cartContent = document.querySelector(".cart-content")
 
 showSlides(currentSlideIndex);
 setInterval(nextSlide, 4000);
@@ -21,6 +23,7 @@ window.addEventListener("scroll", () => {
 });
 $cart.addEventListener("click", activeModal);
 $buttonClose.addEventListener("click", activeModal);
+$buttonBuy.addEventListener("click", approvedPurchase);
 
 function activeModal() {
   $modal.classList.toggle("active");
@@ -80,9 +83,10 @@ function updateModalList(productID) {
     $cartItems.innerHTML += modalCardInnerHTML;
   });
   const newPrice = total.toLocaleString("en-US", formatDollObj);
-  $total.innerText = newPrice;
+  $total.innerText = `Total ` + newPrice;
   $cartTotal.innerText = newPrice;
 }
+
 function createElementWithClass(selector, className) {
   const $element = document.createElement(selector);
   $element.classList.add(className);
@@ -105,3 +109,12 @@ function modelHTML(object) {
   return html;
 }
 
+function approvedPurchase(){
+  const $checked = createElementWithClass("div", "checked");
+  $checked.innerHTML = `<img src="./assets/gif/check.gif" alt="buy-checked">`;
+  $cartContent.appendChild($checked)
+  setTimeout(() => {
+    $checked.remove();
+    activeModal()
+  },2440);
+}

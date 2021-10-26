@@ -14,6 +14,7 @@ const $buttonClose = document.querySelector(".close-cart");
 const $cartItems = document.querySelector(".cart-items");
 const $buttonBuy = document.querySelector(".buy");
 const $cartContent = document.querySelector(".cart-content");
+const purchase = $cartItems == "" ? purchaseDenied : approvedPurchase;
 
 showSlides(currentSlideIndex);
 setInterval(nextSlide, 4000);
@@ -23,7 +24,7 @@ window.addEventListener("scroll", () => {
 });
 $cart.addEventListener("click", activeModal);
 $buttonClose.addEventListener("click", activeModal);
-$buttonBuy.addEventListener("click", approvedPurchase);
+$buttonBuy.addEventListener("click", purchase);
 
 function activeModal() {
   $modal.classList.toggle("active");

@@ -9,7 +9,7 @@ const MAIN_DISHES = [
     img: "./assets/food-images/rice.png",
   },
   {
-    id:"2",
+    id: "2",
     description: "Bean",
     value: 1.6,
     quantity: 0,

@@ -11,7 +11,6 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
 .fade-in {
   opacity: 1;
 }
@@ -440,19 +439,22 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: space-between;
 }
 
-form{
+.price-content {
+  margin-top: 15px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 .cart-functions p {
   font-weight: bold;
   font-size: 24px;
 }
+.price-content span {
+  margin-left: 5px;
+}
 
-form input:nth-child(2){
+.price-content input:nth-child(2) {
   text-transform: uppercase;
   width: 30%;
   text-align: center;
@@ -462,18 +464,37 @@ form input:nth-child(2){
   font-family: "Poppins";
   margin-right: 5px;
 }
-form input:nth-child(3){
+.price-content button {
   padding: 2px;
   font-family: "Poppins";
   font-weight: 700;
   border-radius: 6px;
   background-color: var(--white);
-  transition: background-color .3s, color .3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-form input:nth-child(3):hover{
+.price-content input:nth-child(3):hover {
   background-color: var(--base);
   color: var(--white);
+}
+
+.coupon-message {
+  color: transparent;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 128px;
+  width: 243px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s, color 0.5s;
+}
+.coupon-message.error {
+  opacity: 1;
+  color: red;
+}
+.coupon-message.success {
+  opacity: 1;
+  color: green;
 }
 button.buy {
   background-color: var(--white);
@@ -494,12 +515,18 @@ button.buy:hover {
   border-color: rgb(41, 180, 6);
 }
 
+.checked {
+  z-index: 2;
+  transition: opacity 0.5s;
+}
+
 div.checked img {
   position: absolute;
   background-color: var(--white);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
   height: 100%;
 }
 
@@ -516,6 +543,7 @@ div.unchecked {
   background-color: var(--white);
   border: 3px solid var(--black);
   padding: 20px 20px;
+  transition: opacity 0.5s;
 }
 
 div.unchecked p {
@@ -614,7 +642,7 @@ footer {
     margin: 10px;
   }
 
-  .cart-functions{
+  .cart-functions {
     justify-content: space-around;
   }
   .cart-functions p {

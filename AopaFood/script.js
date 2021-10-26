@@ -141,3 +141,18 @@ function purchaseDenied() {
   $cartContent.appendChild($unchecked);
   fadeOut($unchecked, 3000, false);
 }
+
+function fadeOut($element, time, boolean) {
+  if (boolean) {
+    window.scrollTo(0, 0);
+    toggleModal();
+    document.documentElement.style.overflow = "hidden";
+  }
+  setTimeout(() => {
+    $element.classList.add("fade-out");
+  }, time);
+  setTimeout(() => {
+    $element.remove();
+    document.documentElement.style.overflow = "auto";
+  }, time + 500);
+}

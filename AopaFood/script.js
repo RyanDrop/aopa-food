@@ -26,8 +26,8 @@ setInterval(nextSlide, 4000);
 window.addEventListener("scroll", () => {
   $header.classList.toggle("scroll-color", window.scrollY);
 });
-$cart.addEventListener("click", activeModal);
-$buttonClose.addEventListener("click", activeModal);
+$cart.addEventListener("click", toggleModal);
+$buttonClose.addEventListener("click", toggleModal);
 $couponButton.addEventListener("click", couponCheck);
 $buttonBuy.addEventListener("click", () => {
   const purchaseFn = $cartItems.innerText === "" ? purchaseDenied : approvedPurchase;
@@ -118,28 +118,21 @@ $buttonsCart.forEach(($element) => {
   });
 });
 
-function updateModalList(productID) {
+function updateModalList(productID, value, boolean) {
   let total = 0;
-  const cart = shopItems.filter((object) => {
-    if (object.id == productID) {
-      object.incard = true;
-      object.quantity += 1;
-    }
-    if (object.incard) {
-      return object;
-    }
-  });
-  $cartItems.innerHTML = "";
+  const cardFn = value != 0 ? addItem : removeItem;
+  const cart = cardFn(productID, value, boolean);
+  $cartItems.innerHTML = "  ";
   cart.forEach((object) => {
     const modalCardInnerHTML = `
           <div class="cart-card">
             <img src="${object.img}" alt="food">  
-            <div class="data-items">
+            <div class="data-items" data-id="${object.id}"">
               <h1 class="description">${object.description}</h1>
               <div class="input-display">
-              <button><i class="fas fa-trash" aria-hidden="true"></i></button>
-              <input type="number" value="${object.quantity}">
-              <button><i class="far fa-plus-square" aria-hidden="true"></i></button>
+              <button class="remove-item"><i class="fas fa-trash" aria-hidden="true"></i></button>
+              <input type="number" max="99" value="${object.quantity}">
+              <button class="add-item"><i class="far fa-plus-square" aria-hidden="true"></i></button>
               </div>         
               <p class="total">${(object.value * object.quantity).toLocaleString("en-US", formatDollObj)}</p>
             </div>
@@ -150,7 +143,7 @@ function updateModalList(productID) {
     $cartItems.innerHTML += modalCardInnerHTML;
   });
   const newPrice = total.toLocaleString("en-US", formatDollObj);
-  $total.innerText = `Total ` + newPrice;
+  $total.innerText = newPrice;
   $cartTotal.innerText = newPrice;
   inputAddEventListener();
 }

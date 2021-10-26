@@ -7,6 +7,7 @@ const MAIN_DISHES = [
     value: 2.0,
     quantity: 0,
     img: "./assets/food-images/rice.png",
+    alt: "rice"
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ const MAIN_DISHES = [
     value: 1.6,
     quantity: 0,
     img: "./assets/food-images/bean.png",
+    alt: "Bean",
   },
   {
     id: "3",
@@ -21,6 +23,7 @@ const MAIN_DISHES = [
     value: 0.4,
     quantity: 0,
     img: "./assets/food-images/salad.png",
+    alt: "salad",
   },
 ];
 
@@ -31,6 +34,7 @@ const DESSERTS = [
     value: 0.99,
     quantity: 0,
     img: "./assets/food-images/ice-cream.png",
+    alt: "ice-cream",
   },
   {
     id: "102",
@@ -38,6 +42,7 @@ const DESSERTS = [
     value: 1.1,
     quantity: 0,
     img: "./assets/food-images/blueberry.png",
+    alt: "blueberry",
   },
 ];
 
@@ -48,6 +53,7 @@ const DRINKS = [
     value: 2.0,
     quantity: 0,
     img: "./assets/food-images/orange-juice.png",
+    alt: "orange-juice",
   },
   {
     id: "202",
@@ -55,5 +61,6 @@ const DRINKS = [
     value: 2.0,
     quantity: 0,
     img: "./assets/food-images/coca-cola.png",
+    alt: "coca-cola",
   },
 ];

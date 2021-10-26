@@ -72,7 +72,7 @@ function updateModalList(productID, value, boolean) {
   cart.forEach((object) => {
     const modalCardInnerHTML = `
           <div class="cart-card">
-            <img src="${object.img}" alt="food">  
+            <img src="${object.img}" alt="${object.alt}">  
             <div class="data-items" data-id="${object.id}"">
               <h1 class="description">${object.description}</h1>
               <div class="input-display">
@@ -165,7 +165,7 @@ function createCardElement() {
 function modelHTML(object) {
   const html = `
   <h1>${object.description}</h1>
-  <img src='${object.img}' alt='food'>
+  <img src='${object.img}' alt='${object.alt}'>
   <p>${object.value.toLocaleString("en-US", formatDollObj)}</p>
   <button class='add-cart' key="${object.id}">Add</button>
   `;

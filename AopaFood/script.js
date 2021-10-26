@@ -42,6 +42,60 @@ function toggleModal() {
   $couponMessage.classList.remove("success");
 }
 
+function inputAddEventListener() {
+  const $addButtons = document.querySelectorAll(".add-item");
+  const $removeButtons = document.querySelectorAll(".remove-item");
+  const $addInputs = document.querySelectorAll("input[type=number]");
+
+  $addInputs.forEach((input) => {
+    input.addEventListener("change", (event) => {
+      const value = event.target.value > 99 ? 1 : event.target.value;
+      const newValue = parseInt(value);
+      const id = event.target.parentElement.parentElement.dataset.id;
+      updateModalList(id, newValue);
+    });
+  });
+
+  $addButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.parentElement.parentElement.dataset.id;
+      updateModalList(id, 1, true);
+    });
+  });
+  $removeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.parentElement.parentElement.dataset.id;
+      removeItem(id);
+      updateModalList(id, 0);
+    });
+  });
+}
+function removeItem(id) {
+  return shopItems.filter((object) => {
+    if (object.id == id) {
+      object.quantity = 0;
+      object.inCard = false;
+    }
+    if (object.inCard) {
+      return object;
+    }
+  });
+}
+function addItem(id, value, boolean) {
+  const cart = shopItems.filter((object) => {
+    if (object.id == id) {
+      object.inCard = true;
+      const newValue = boolean ? (object.quantity += value) : value;
+      object.quantity = newValue == 0 ? 1 : newValue;
+      object.quantity > 99 ? (object.quantity = 99) : object.quantity;
+    }
+    if (object.inCard) {
+      return object;
+    }
+  });
+  return cart;
+}
+
 const shopItems = [
   ...MAIN_DISHES.map((item) => ({ ...item, $container: $mainCourse })),
   ...DESSERTS.map((item) => ({ ...item, $container: $dessert })),

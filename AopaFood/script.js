@@ -1,9 +1,9 @@
 import { currentSlideIndex, nextSlide, showSlides } from "./modules/slideshow.js";
 import { MAIN_DISHES, DESSERTS, DRINKS } from "./modules/shop-items.js";
 
+const $main = document.querySelector("main");
 const $header = document.querySelector("header");
 const $modal = document.querySelector(".modal");
-const $total = document.querySelector(".cart-functions p");
 const $cartTotal = document.querySelector(".cart h1");
 const $mainCourse = document.querySelector(".main-dishes");
 const $dessert = document.querySelector(".desserts");
@@ -14,7 +14,12 @@ const $buttonClose = document.querySelector(".close-cart");
 const $cartItems = document.querySelector(".cart-items");
 const $buttonBuy = document.querySelector(".buy");
 const $cartContent = document.querySelector(".cart-content");
-const purchase = $cartItems == "" ? purchaseDenied : approvedPurchase;
+const $couponInput = document.querySelector(".price-content input");
+const $couponMessage = document.querySelector(".coupon-message");
+const $couponButton = document.querySelector(".price-content button");
+const $total = document.querySelector(".price-content span");
+let actuallyCoupon = "none";
+
 
 showSlides(currentSlideIndex);
 setInterval(nextSlide, 4000);
@@ -24,7 +29,10 @@ window.addEventListener("scroll", () => {
 });
 $cart.addEventListener("click", activeModal);
 $buttonClose.addEventListener("click", activeModal);
-$buttonBuy.addEventListener("click", purchase);
+$buttonBuy.addEventListener("click", () => {
+  const purchaseFn = $cartItems.innerText === "" ? purchaseDenied : approvedPurchase;
+  purchaseFn();
+});
 
 function activeModal() {
   $modal.classList.toggle("active");
@@ -111,13 +119,17 @@ function modelHTML(object) {
 }
 
 function approvedPurchase() {
+  shopItems.forEach((object) => {
+    object.inCard = false;
+    object.quantity = 0;
+  });
+  $cartItems.innerHTML = "";
+  $cartTotal.innerText = "$0,00";
+  $total.innerText = "$0,00";
   const $checked = createElementWithClass("div", "checked");
   $checked.innerHTML = `<img src="./assets/gif/check.gif" alt="buy-checked">`;
-  $cartContent.appendChild($checked);
-  setTimeout(() => {
-    $checked.remove();
-    activeModal();
-  }, 2440);
+  $main.appendChild($checked);
+  fadeOut($checked, 2440, true);
 }
 
 function purchaseDenied() {
@@ -127,7 +139,5 @@ function purchaseDenied() {
   <img src="./assets/gif/unchecked.gif" alt="buy-checked">
   `;
   $cartContent.appendChild($unchecked);
-  setTimeout(() => {
-    $unchecked.remove();
-  }, 3000);
+  fadeOut($unchecked, 3000, false);
 }

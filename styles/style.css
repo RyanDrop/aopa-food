@@ -63,7 +63,7 @@ header i {
   padding: 5px 4px;
   user-select: none;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   transition: border-color 0.4s;
 }
 
@@ -239,9 +239,11 @@ Section.shop {
 
 .card p {
   font-size: 22px;
+  font-size: 19px;
+  font-weight: 500;
 }
 
-.card button {
+.card button.add-cart {
   height: 40px;
   width: 140px;
   background-color: var(--base);
@@ -250,6 +252,8 @@ Section.shop {
   font-weight: bold;
   cursor: pointer;
   transition: color 0.5s;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .card button:hover {
@@ -343,7 +347,7 @@ button.close-cart:hover {
   color: red;
 }
 .cart-items {
-  height: 75%;
+  height: 73%;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -427,11 +431,13 @@ input[type="number"]::-webkit-outer-spin-button {
   font-weight: 400;
   text-align: center;
   border-radius: 5px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .cart-functions {
   padding-top: 5px;
-  height: 15%;
+  height: 17%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -440,7 +446,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .price-content {
-  margin-top: 15px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -471,23 +476,25 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 6px;
   background-color: var(--white);
   transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
-.price-content input:nth-child(3):hover {
+.price-content button:hover {
   background-color: var(--base);
   color: var(--white);
+  border: 2px solid var(--black);
 }
 
 .coupon-message {
   color: transparent;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-left: 128px;
-  width: 243px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: min(100%, 600px);
   opacity: 0;
   transition: opacity 0.3s, color 0.5s;
+  font-weight: 700;
 }
+
 .coupon-message.error {
   opacity: 1;
   color: red;
@@ -496,6 +503,7 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
   color: green;
 }
+
 button.buy {
   background-color: var(--white);
   width: 280px;
@@ -515,7 +523,10 @@ button.buy:hover {
   border-color: rgb(41, 180, 6);
 }
 
-.checked {
+div.checked {
+  position: fixed;
+  height: 100%;
+  width: 100%;
   z-index: 2;
   transition: opacity 0.5s;
 }
@@ -534,6 +545,7 @@ div.unchecked {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 180px;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -544,6 +556,7 @@ div.unchecked {
   border: 3px solid var(--black);
   padding: 20px 20px;
   transition: opacity 0.5s;
+  overflow: hidden;
 }
 
 div.unchecked p {
@@ -553,7 +566,7 @@ div.unchecked p {
 }
 
 div.unchecked img {
-  width: 60%;
+  width: 100px;
 }
 /* footer */
 footer {

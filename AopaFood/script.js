@@ -29,6 +29,7 @@ window.addEventListener("scroll", () => {
 });
 $cart.addEventListener("click", activeModal);
 $buttonClose.addEventListener("click", activeModal);
+$couponButton.addEventListener("click", couponCheck);
 $buttonBuy.addEventListener("click", () => {
   const purchaseFn = $cartItems.innerText === "" ? purchaseDenied : approvedPurchase;
   purchaseFn();
@@ -116,6 +117,33 @@ function modelHTML(object) {
   <button class='add-cart' key="${object.id}">Add</button>
   `;
   return html;
+}
+
+function couponCheck() {
+  const userText = $couponInput.value.toUpperCase();
+  if (actuallyCoupon === userText) {
+    $couponMessage.classList.remove("success");
+    $couponMessage.innerText = "This coupon has already been applied";
+    $couponMessage.classList.add("error");
+    return;
+  }
+  $total.innerText === "$0,00"
+    ? ($couponMessage.innerText = "It is not possible to apply coupon with empty cart")
+    : ($couponMessage.innerText = "Invalid Coupon");
+  $couponMessage.classList.add("error");
+  $couponMessage.classList.remove("success");
+  if (userText === "AOPAMUNDO" && $total.innerText != "0,00") {
+    $couponMessage.classList.remove("error");
+    $couponMessage.classList.add("success");
+    $couponMessage.innerText = "Coupon Applied";
+    const cartText = $cartTotal.innerText.replace("$", "");
+    const textToNumber = parseInt(cartText);
+    const coupon = textToNumber * 0.1;
+    const newValue = (textToNumber - coupon).toLocaleString("en-US", formatDollObj);
+    actuallyCoupon = userText;
+    $total.innerText = newValue;
+    $cartTotal.innerText = newValue;
+  }
 }
 
 function approvedPurchase() {

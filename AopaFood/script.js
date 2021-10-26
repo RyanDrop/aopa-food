@@ -20,7 +20,6 @@ const $couponButton = document.querySelector(".price-content button");
 const $total = document.querySelector(".price-content span");
 let actuallyCoupon = "none";
 
-
 showSlides(currentSlideIndex);
 setInterval(nextSlide, 4000);
 
@@ -35,8 +34,12 @@ $buttonBuy.addEventListener("click", () => {
   purchaseFn();
 });
 
-function activeModal() {
+function toggleModal() {
   $modal.classList.toggle("active");
+  $couponInput.value = "";
+  $couponMessage.innerText = "";
+  $couponMessage.classList.remove("error");
+  $couponMessage.classList.remove("success");
 }
 
 const shopItems = [
@@ -95,6 +98,7 @@ function updateModalList(productID) {
   const newPrice = total.toLocaleString("en-US", formatDollObj);
   $total.innerText = `Total ` + newPrice;
   $cartTotal.innerText = newPrice;
+  inputAddEventListener();
 }
 
 function createElementWithClass(selector, className) {

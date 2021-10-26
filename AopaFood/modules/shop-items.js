@@ -2,21 +2,21 @@ export { MAIN_DISHES, DESSERTS, DRINKS };
 
 const MAIN_DISHES = [
   {
-    id: 1,
+    id: "1",
     description: "Rice",
     value: 2.0,
     quantity: 0,
     img: "./assets/food-images/rice.png",
   },
   {
-    id: 2,
+    id:"2",
     description: "Bean",
     value: 1.6,
     quantity: 0,
     img: "./assets/food-images/bean.png",
   },
   {
-    id: 3,
+    id: "3",
     description: "Salad",
     value: 0.4,
     quantity: 0,
@@ -26,14 +26,14 @@ const MAIN_DISHES = [
 
 const DESSERTS = [
   {
-    id: 101,
+    id: "101",
     description: "Ice Cream",
     value: 0.99,
     quantity: 0,
     img: "./assets/food-images/ice-cream.png",
   },
   {
-    id: 102,
+    id: "102",
     description: "Blueberry",
     value: 1.1,
     quantity: 0,
@@ -43,14 +43,14 @@ const DESSERTS = [
 
 const DRINKS = [
   {
-    id: 201,
+    id: "201",
     description: "Juice",
     value: 2.0,
     quantity: 0,
     img: "./assets/food-images/orange-juice.png",
   },
   {
-    id: 202,
+    id: "202",
     description: "Coke",
     value: 2.0,
     quantity: 0,

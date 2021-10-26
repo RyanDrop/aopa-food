@@ -337,7 +337,7 @@ button.close-cart:hover {
   color: red;
 }
 .cart-items {
-  height: 80%;
+  height: 75%;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -424,24 +424,50 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .cart-functions {
+  padding-top: 5px;
   height: 15%;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  flex-flow: row wrap;
 }
 
-.cart-functions p {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  font-weight: bold;
+form{
   width: 100%;
-  font-size: 25px;
-  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.cart-functions p {
+  font-weight: bold;
+  font-size: 24px;
 }
 
+form input:nth-child(2){
+  text-transform: uppercase;
+  width: 30%;
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-weight: 700;
+  font-family: "Poppins";
+  margin-right: 5px;
+}
+form input:nth-child(3){
+  padding: 2px;
+  font-family: "Poppins";
+  font-weight: 700;
+  border-radius: 6px;
+  background-color: var(--white);
+  transition: background-color .3s, color .3s;
+}
+
+form input:nth-child(3):hover{
+  background-color: var(--base);
+  color: var(--white);
+}
 button.buy {
   background-color: var(--white);
   width: 280px;
@@ -451,9 +477,6 @@ button.buy {
   color: var(--black);
   font-weight: bold;
   font-family: "Poppins", sans-serif;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border 0.2s;
 }
@@ -584,6 +607,9 @@ footer {
     margin: 10px;
   }
 
+  .cart-functions{
+    justify-content: space-around;
+  }
   .cart-functions p {
     font-size: 30px;
   }

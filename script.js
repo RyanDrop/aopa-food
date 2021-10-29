@@ -15,7 +15,7 @@ const $cartItems = document.querySelector(".cart-items");
 const $buttonBuy = document.querySelector(".buy");
 const $cartContent = document.querySelector(".cart-content");
 const $couponInput = document.querySelector(".price-content input");
-const $couponMessage = document.querySelector(".coupon-message");
+const $couponMessage = document.querySelector(".coupon-message p");
 const $couponButton = document.querySelector(".price-content button");
 const $total = document.querySelector(".price-content span");
 let actuallyCoupon = "none";
@@ -29,10 +29,7 @@ window.addEventListener("scroll", () => {
 $cart.addEventListener("click", toggleModal);
 $buttonClose.addEventListener("click", toggleModal);
 $couponButton.addEventListener("click", couponCheck);
-$buttonBuy.addEventListener("click", () => {
-  const purchaseFn = $cartItems.innerText === "" ? purchaseDenied : approvedPurchase;
-  purchaseFn();
-});
+$buttonBuy.addEventListener("click", approvedPurchase);
 
 function toggleModal() {
   $modal.classList.toggle("active");
@@ -92,6 +89,8 @@ function updateModalList(productID, value, boolean) {
   $total.innerText = newPrice;
   $cartTotal.innerText = newPrice;
   inputAddEventListener();
+  const isCartEmpty = cart.length === 0;
+  buyDisable(isCartEmpty);
 }
 
 function inputAddEventListener() {
@@ -172,6 +171,13 @@ function modelHTML(object) {
   return html;
 }
 
+function buyDisable(boolean) {
+  $buttonBuy.disabled = boolean;
+  if (boolean === true) {
+    $cartItems.innerHTML = `<p class='empty-cart'>Empty cart, add items to proceed</p></div>`;
+  }
+}
+
 function couponCheck() {
   const userText = $couponInput.value.toUpperCase();
   if (actuallyCoupon === userText) {
@@ -210,17 +216,8 @@ function approvedPurchase() {
   const $checked = createElementWithClass("div", "checked");
   $checked.innerHTML = `<img src="./assets/gif/check.gif" alt="buy-checked">`;
   $main.appendChild($checked);
+  updateModalList();
   fadeOut($checked, 2440, true);
-}
-
-function purchaseDenied() {
-  const $unchecked = createElementWithClass("div", "unchecked");
-  $unchecked.innerHTML = `
-  <p>Add items to proceed</p>
-  <img src="./assets/gif/unchecked.gif" alt="buy-checked">
-  `;
-  $cartContent.appendChild($unchecked);
-  fadeOut($unchecked, 3000, false);
 }
 
 function fadeOut($element, time, boolean) {

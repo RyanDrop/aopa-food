@@ -182,19 +182,17 @@ function couponCheck() {
   const userText = $couponInput.value.toUpperCase();
   if (actuallyCoupon === userText) {
     $couponMessage.classList.remove("success");
-    $couponMessage.innerText = "This coupon has already been applied";
+    $couponMessage.innerHTML = "Coupon already applied";
     $couponMessage.classList.add("error");
     return;
   }
-  $total.innerText === "$0,00"
-    ? ($couponMessage.innerText = "It is not possible to apply coupon with empty cart")
-    : ($couponMessage.innerText = "Invalid Coupon");
+  $total.innerText === "$0,00" ? ($couponMessage.innerHTML = "Cart empty") : ($couponMessage.innerHTML = "Invalid Coupon");
   $couponMessage.classList.add("error");
   $couponMessage.classList.remove("success");
   if (userText === "AOPAMUNDO" && $total.innerText != "0,00") {
     $couponMessage.classList.remove("error");
     $couponMessage.classList.add("success");
-    $couponMessage.innerText = "Coupon Applied";
+    $couponMessage.innerHTML = "Coupon Applied";
     const cartText = $cartTotal.innerText.replace("$", "");
     const textToNumber = parseInt(cartText);
     const coupon = textToNumber * 0.1;
@@ -203,6 +201,11 @@ function couponCheck() {
     $total.innerText = newValue;
     $cartTotal.innerText = newValue;
   }
+  setTimeout(() => {
+    $couponMessage.classList.remove("error");
+    $couponMessage.classList.remove("success");
+    $couponMessage.innerHTML = "";
+  }, 3000);
 }
 
 function approvedPurchase() {

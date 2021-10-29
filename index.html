@@ -78,7 +78,9 @@
           <button class="close-cart"><i class="far fa-times-circle"></i></button>
         </div>
         <div class="line"></div>
-        <div class="cart-items"></div>
+        <div class="cart-items">
+          <p class="empty-cart">Empty cart, add items to proceed</p>
+        </div>
         <div class="line"></div>
         <div class="cart-functions">
           <div class="price-content">
@@ -86,8 +88,8 @@
             <input type="text" placeholder="Coupon" />
             <button>Check</button>
           </div>
-          <span class="coupon-message">Invalid Coupon</span>
-          <button class="buy">Buy</button>
+          <div class="coupon-message"><p></p></div>
+          <button disabled="true" class="buy">Buy</button>
         </div>
       </div>
     </div>

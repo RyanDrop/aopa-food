@@ -486,22 +486,30 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .coupon-message {
-  color: transparent;
   display: flex;
+  align-items: center;
   justify-content: center;
   width: min(100%, 600px);
-  opacity: 0;
-  transition: opacity 0.3s, color 0.5s;
-  font-weight: 700;
+  font-weight: 400;
 }
 
-.coupon-message.error {
+p.error {
+  position: absolute;
+  padding: 6px;
   opacity: 1;
-  color: red;
+  background-color: rgb(250, 71, 71);
+  font-size: 16px;
+  border-radius: 7px;
+  transition: opacity 0.5s;
 }
-.coupon-message.success {
+p.success {
+  position: absolute;
   opacity: 1;
-  color: green;
+  padding: 6px;
+  background-color: rgb(119, 252, 115);
+  font-size: 16px;
+  border-radius: 7px;
+  transition: opacity 0.5s;
 }
 
 button.buy {
@@ -523,12 +531,20 @@ button.buy:hover {
   border-color: rgb(41, 180, 6);
 }
 
+button.buy:disabled {
+  background-color: #ccc;
+  border: 1px solid #999;
+  color: #666;
+  cursor: not-allowed;
+}
+
 div.checked {
   position: fixed;
   height: 100%;
   width: 100%;
   z-index: 2;
   transition: opacity 0.5s;
+  background-color: rgb(247, 247, 247);
 }
 
 div.checked img {
@@ -538,35 +554,17 @@ div.checked img {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: opacity 0.5s;
-  height: 100%;
+  width: 100%;
 }
 
-div.unchecked {
-  position: absolute;
+p.empty-cart {
+  position: relative;
   top: 50%;
-  left: 50%;
-  width: 180px;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  background-color: var(--white);
-  border: 3px solid var(--black);
-  padding: 20px 20px;
-  transition: opacity 0.5s;
-  overflow: hidden;
-}
-
-div.unchecked p {
-  font-size: 20px;
-  font-weight: 700;
+  width: 250px;
   text-align: center;
-}
-
-div.unchecked img {
-  width: 100px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(138, 138, 138);
 }
 /* footer */
 footer {
@@ -654,14 +652,10 @@ footer {
   .cart-card {
     margin: 10px;
   }
-
   .cart-functions {
-    justify-content: space-around;
+    justify-content: space-between;
+    margin: 20px 0px;
   }
-  .cart-functions p {
-    font-size: 30px;
-  }
-
   button.buy {
     width: 400px;
     height: 48px;
@@ -669,7 +663,7 @@ footer {
   }
   div.checked {
     position: absolute;
-    background-color: rgb(246, 246, 246);
+    background-color: rgb(247, 247, 247);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

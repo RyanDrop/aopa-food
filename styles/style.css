@@ -4,6 +4,8 @@
   --white: #fff;
   --black: #000;
   --yellow: #fff500;
+  --grey: #ccc;
+  --medium-grey:#666;
 }
 
 body {
@@ -480,11 +482,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .price-content button:hover {
-  background-color: var(--base);
-  color: var(--white);
+  background-color: var(--grey);
   border: 2px solid var(--black);
 }
 
+.price-content button:disabled{
+  background-color: var(--grey);
+  color: var(--medium-grey);
+  border: 1px solid var(--medium-grey);
+  cursor: not-allowed;
+
+}
 .coupon-message {
   display: flex;
   align-items: center;
@@ -532,9 +540,9 @@ button.buy:hover {
 }
 
 button.buy:disabled {
-  background-color: #ccc;
-  border: 1px solid #999;
-  color: #666;
+  background-color: var(--grey);
+  border: 1px solid var(--medium-grey);
+  color: var(--medium-grey);
   cursor: not-allowed;
 }
 

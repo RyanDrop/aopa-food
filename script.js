@@ -90,7 +90,7 @@ function updateModalList(productID, value, boolean) {
   $cartTotal.innerText = newPrice;
   inputAddEventListener();
   const isCartEmpty = cart.length === 0;
-  buyDisable(isCartEmpty);
+  buttonDisable(isCartEmpty);
 }
 
 function inputAddEventListener() {
@@ -171,7 +171,8 @@ function modelHTML(object) {
   return html;
 }
 
-function buyDisable(boolean) {
+function buttonDisable(boolean) {
+  $couponButton.disabled = boolean;
   $buttonBuy.disabled = boolean;
   if (boolean === true) {
     $cartItems.innerHTML = `<p class='empty-cart'>Empty cart, add items to proceed</p></div>`;
@@ -186,9 +187,6 @@ function couponCheck() {
     $couponMessage.classList.add("error");
     return;
   }
-  $total.innerText === "$0,00" ? ($couponMessage.innerHTML = "Cart empty") : ($couponMessage.innerHTML = "Invalid Coupon");
-  $couponMessage.classList.add("error");
-  $couponMessage.classList.remove("success");
   if (userText === "AOPAMUNDO" && $total.innerText != "0,00") {
     $couponMessage.classList.remove("error");
     $couponMessage.classList.add("success");

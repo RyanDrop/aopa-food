@@ -1,41 +1,53 @@
-const $slides = document.querySelectorAll(".slide");
-const $dots = document.querySelectorAll(".dot");
-const $prev = document.querySelector(".prev");
-const $next = document.querySelector(".next");
-const [$firstDot, $secondDot] = $dots;
+export class Slideshow {
+  constructor($slides, $dots, $prev, $next) {
+    this.$slides = $slides;
+    this.$dots = $dots;
+    this.$prev = $prev;
+    this.$next = $next;
+    this.$firstDot = this.$dots[0];
+    this.$secondDot = this.$dots[1];
+    this.slideIndex = 0;
+  }
 
-$firstDot.addEventListener("click", () => showSlides(0));
-$secondDot.addEventListener("click", () => showSlides(1));
-$next.addEventListener("click", nextSlide);
-$prev.addEventListener("click", previousSlide);
+  elementsAddEventListener() {
+    this.$firstDot.addEventListener("click", () => this.showSlides(0));
+    this.$secondDot.addEventListener("click", () => this.showSlides(1));
+    this.$next.addEventListener("click", () => this.nextSlide());
+    this.$prev.addEventListener("click", () => this.previousSlide());
+  }
 
-export let currentSlideIndex = 0;
+  showSlides(number = 0) {
+    this.setDisplay(this.$slides, "none");
+    this.removeClass(this.$dots, "active");
+    this.slideIndex = number;
+    const index = this.slideIndex;
+    this.$slides[index].style.display = "block";
+    this.$dots[index].classList.add("active");
+  }
 
-export function showSlides(currentSlideIndex) {
-  setDisplay($slides, "none");
-  removeClass($dots, "active");
+  nextSlide() {
+    this.slideIndex += 1;
+    const actualIndex = this.slideIndex % this.$slides.length;
+    this.slideIndex = actualIndex;
+    this.showSlides(this.slideIndex);
+  }
 
-  $slides[currentSlideIndex].style.display = "block";
-  $dots[currentSlideIndex].classList.add("active");
-}
-export function nextSlide() {
-  currentSlideIndex = (currentSlideIndex += 1) % $slides.length;
-  showSlides(currentSlideIndex);
-}
+  previousSlide() {
+    const convertedIndex = Math.abs((this.slideIndex -= 1));
+    const actualIndex = convertedIndex % this.$slides.length;
+    this.slideIndex = actualIndex;
+    this.showSlides(this.slideIndex);
+  }
 
-function previousSlide() {
-  currentSlideIndex = Math.abs((currentSlideIndex -= 1)) % $slides.length;
-  showSlides(currentSlideIndex);
-}
+  removeClass(arr, name) {
+    arr.forEach(($element) => {
+      $element.classList.remove(name);
+    });
+  }
 
-function removeClass(arr, name) {
-  arr.forEach(($element) => {
-    $element.classList.remove(name);
-  });
-}
-
-function setDisplay(arr, display) {
-  arr.forEach((element) => {
-    element.style.display = display;
-  });
+  setDisplay(arr, display) {
+    arr.forEach((element) => {
+      element.style.display = display;
+    });
+  }
 }

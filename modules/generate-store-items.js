@@ -1,3 +1,5 @@
+import { Utils } from "./utils.js";
+
 export class GenerateStoreItems {
   constructor(shopItem) {
     this.shopItem = shopItem;
@@ -12,24 +14,17 @@ export class GenerateStoreItems {
     });
   }
 
-  createElementWithClass(selector, className) {
-    const $element = document.createElement(selector);
-    $element.classList.add(className);
-    return $element;
-  }
-
   createCardElement(modelHTML) {
-    const $card = this.createElementWithClass("div", "card");
+    const $card = Utils.createElementWithClass("div", "card");
     $card.innerHTML = modelHTML;
     return $card;
   }
 
   createModelHTML(object) {
-    const formatDollObj = { style: "currency", currency: "USD" };
     const html = `
   <h1>${object.description}</h1>
   <img src='${object.img}' alt='${object.alt}'>
-  <p>${object.value.toLocaleString("en-US", formatDollObj)}</p>
+  <p>${object.value.toLocaleString("en-US", Utils.formatDollObj)}</p>
   <button class='add-cart' key="${object.id}">Add</button>
   `;
     return html;

@@ -2,7 +2,7 @@
 
 <div align="right">
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/25cac59e-687f-4867-bb3a-21fbf2b21b4f/deploy-status)](https://app.netlify.com/sites/ryan-aopafood/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/25cac59e-687f-4867-bb3a-21fbf2b21b4f/deploy-status)](https://ryan-aopafood.netlify.app/)
 
 </div>
 

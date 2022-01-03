@@ -2,12 +2,7 @@
 
 <div align="right">
 
-<<<<<<< HEAD
 [![Netlify Status](https://api.netlify.com/api/v1/badges/25cac59e-687f-4867-bb3a-21fbf2b21b4f/deploy-status)](https://app.netlify.com/sites/ryan-aopafood/deploys)
-=======
-[![Netlify Status](https://api.netlify.com/api/v1/badges/25cac59e-687f-4867-bb3a-21fbf2b21b4f/deploy-status)](https://ryan-aopafood.netlify.app/)
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
-
 </div>
 
 <div align="right">
@@ -16,13 +11,14 @@
   
 </div>
 
-<p align="center">
-<<<<<<< HEAD
+<div align="center">
+
   <img alt="aopa-food-app" src="./assets/food-images/aopa-food-logo.png" width="350px" height="180px"/>
-=======
-  <img alt="poke-app" src="./assets/food-images/aopa-food-logo.png" width="350px" height="180px"/>
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
-</p>
+
+</div>
+
+<br>
+<br>
 
 <p align="center"> 
   <img alt="Top Language" src="https://img.shields.io/github/languages/top/RyanDrop/AopaFood?color=3498db&style=for-the-badge">
@@ -52,11 +48,8 @@
 
 <div align="center">
 
-<<<<<<< HEAD
+
 Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://ryan-aopafood.netlify.app/)
-=======
-Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://joaovitorsw-pokedex.netlify.app/)
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
 
 |                            :computer:Desktop                             |                             :iphone: Mobile                             |
 | :----------------------------------------------------------------------: | :---------------------------------------------------------------------: |
@@ -65,10 +58,6 @@ Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visuali
 </div>
   
 ---
-<<<<<<< HEAD
-
-=======
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
 ## :information_source: _Sobre_
 
 <div align="center">
@@ -79,14 +68,7 @@ Minha aplicação que simula um app de delivery mais simplificado !
 
 </div>
 
-</div>
-
-<<<<<<< HEAD
-
 ## :hammer_and_wrench: _Tecnologias_
-=======
-## :hammer*and_wrench: \_Tecnologias*
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
 
 <div align="center">
 
@@ -128,23 +110,15 @@ Minha aplicação que simula um app de delivery mais simplificado !
 
 Desenvolvido com ❤️ por RyanDrop👋🏽 Meus Contatos!
 
-<<<<<<< HEAD
+
 [![Linkedin Badge](https://img.shields.io/badge/-RyanDrop?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-nascimento-7204a4217/)
-=======
-[![Linkedin Badge](https://img.shields.io/badge/-RyanDrop?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-vitor-pereira-dos-santos-10796b169/)
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
 [![Github Badge](https://img.shields.io/badge/-RyanDrop-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/RyanDrop)
 [![Outlook Badge](https://img.shields.io/badge/-RyanDrop-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:ryangithub7509@gmail.com)
 
 </div>
 
 ---
-
-<<<<<<< HEAD
 ## :balance_scale: _Licença_
-=======
-## :balance*scale: \_Licença*
->>>>>>> d58a7c63b31b0e29da1f62ede5f39646bdb7ade0
 
 <div align="center">
 

@@ -3,6 +3,7 @@
 <div align="right">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/25cac59e-687f-4867-bb3a-21fbf2b21b4f/deploy-status)](https://app.netlify.com/sites/ryan-aopafood/deploys)
+
 </div>
 
 <div align="right">
@@ -45,8 +46,7 @@
 
 <div align="center">
 
-
-Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://ryan-aopafood.netlify.app/)
+Deploy do front-end efetuado no [Netlify](https://www.netlify.com/) para visualizar: [Clique Aqui](https://ryandrop-aopafood.netlify.app/)
 
 |                            :computer:Desktop                             |                             :iphone: Mobile                             |
 | :----------------------------------------------------------------------: | :---------------------------------------------------------------------: |
@@ -65,7 +65,7 @@ Minha aplicação que simula um app de delivery mais simplificado !
 
 </div>
 
-## :hammer_and_wrench: _Tecnologias_
+## :hammer*and_wrench: \_Tecnologias*
 
 <div align="center">
 
@@ -107,7 +107,6 @@ Minha aplicação que simula um app de delivery mais simplificado !
 
 Desenvolvido com ❤️ por RyanDrop👋🏽 Meus Contatos!
 
-
 [![Linkedin Badge](https://img.shields.io/badge/-RyanDrop?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-nascimento-7204a4217/)
 [![Github Badge](https://img.shields.io/badge/-RyanDrop-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/RyanDrop)
 [![Outlook Badge](https://img.shields.io/badge/-RyanDrop-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:ryangithub7509@gmail.com)
@@ -115,7 +114,8 @@ Desenvolvido com ❤️ por RyanDrop👋🏽 Meus Contatos!
 </div>
 
 ---
-## :balance_scale: _Licença_
+
+## :balance*scale: \_Licença*
 
 <div align="center">
 

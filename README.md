@@ -107,7 +107,7 @@ Minha aplicação que simula um app de delivery mais simplificado !
 
 Desenvolvido com ❤️ por RyanDrop👋🏽 Meus Contatos!
 
-[![Linkedin Badge](https://img.shields.io/badge/-RyanDrop?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-nascimento-7204a4217/)
+[![Linkedin Badge](https://img.shields.io/badge/-RyanDrop?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/ryan-on/)
 [![Github Badge](https://img.shields.io/badge/-RyanDrop-000?style=flat-square&logo=Github&logoColor=white)](https://github.com/RyanDrop)
 [![Outlook Badge](https://img.shields.io/badge/-RyanDrop-0078d4?style=flat-square&logo=microsoft-outlook&logoColor=white)](mailto:ryangithub7509@gmail.com)
 
